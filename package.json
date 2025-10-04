@@ -7,8 +7,7 @@
     "dataforseo-mcp-server": "./build/main/main/cli.js"
   },
 "scripts": {
-  "preinstall": "npm install typescript@^5.0.0",
-  "build": "tsc",
+  "build": "npm install --production=false && tsc",
   "start": "node dist/index.js",
   "dev": "tsc --watch",
   "prepare": "npm run build",
