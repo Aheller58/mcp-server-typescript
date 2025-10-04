@@ -8,7 +8,7 @@
     },
     "scripts": {
         "build": "tsc",
-        "start": "node dist/index.js",
+        "start": ""start": "node dist/main/index.js",",
         "dev": "tsc --watch",
         "prepare": "npm run build",
         "http": "node build/main/main/index-http.js",
