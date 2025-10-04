@@ -1,17 +1,28 @@
 {
   "compilerOptions": {
+    // --- Module Settings ---
+    "module": "NodeNext",
+    "moduleResolution": "NodeNext",
     "target": "ES2022",
-    "module": "Node16",
-    "moduleResolution": "Node16",
-    "outDir": "dist",
+
+    // --- Output Settings ---
+    "outDir": "./dist",
     "rootDir": "./src",
-    "strict": true,
+    
+    // --- Best Practices ---
     "esModuleInterop": true,
-    "skipLibCheck": true,
     "forceConsistentCasingInFileNames": true,
-    "types": ["node"],
+    "strict": true,
+    "skipLibCheck": true,
+    
+    // --- Debugging ---
     "sourceMap": true
   },
-  "include": ["src/**/*.ts"],
-  "exclude": ["node_modules", "src/worker/**/*"]
+  "include": [
+    "src/**/*"
+  ],
+  "exclude": [
+    "node_modules",
+    "src/worker/**/*"
+  ]
 }
