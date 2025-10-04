@@ -6,19 +6,20 @@
   "bin": {
     "dataforseo-mcp-server": "./build/main/main/cli.js"
   },
-  "scripts": {
-    "build": "npm ci && tsc",
-    "start": "node dist/index.js",
-    "dev": "tsc --watch",
-    "prepare": "npm run build",
-    "http": "node build/main/main/index-http.js",
-    "sse": "node build/main/main/index-sse-http.js",
-    "cli": "node build/main/main/cli.js",
-    "worker:prebuild": "node scripts/generate-worker-version.cjs && wrangler types ./src/worker/worker-configuration.d.ts",
-    "worker:build": "npm run worker:prebuild && tsc --project tsconfig.worker.json",
-    "worker:dev": "npm run worker:build && wrangler dev",
-    "worker:deploy": "npm run worker:build && wrangler deploy"
-  },
+"scripts": {
+  "preinstall": "npm install typescript@^5.0.0",
+  "build": "tsc",
+  "start": "node dist/index.js",
+  "dev": "tsc --watch",
+  "prepare": "npm run build",
+  "http": "node build/main/main/index-http.js",
+  "sse": "node build/main/main/index-sse-http.js",
+  "cli": "node build/main/main/cli.js",
+  "worker:prebuild": "node scripts/generate-worker-version.cjs && wrangler types ./src/worker/worker-configuration.d.ts",
+  "worker:build": "npm run worker:prebuild && tsc --project tsconfig.worker.json",
+  "worker:dev": "npm run worker:build && wrangler dev",
+  "worker:deploy": "npm run worker:build && wrangler deploy"
+},
   "files": [
     "build"
   ],
